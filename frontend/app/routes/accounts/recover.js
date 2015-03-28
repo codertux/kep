@@ -3,13 +3,11 @@ import { raw } from 'ic-ajax';
 
 export default Ember.Route.extend({
   actions: {
-    deviseSendRecover: function(identification) {
+    deviseSendRecover: function(email) {
       var req = raw({
-        type: 'GET',
-        url: '/api/v1/user/password',
-        data: { "email": identification }
-        //,
-        //dataType: 'json'
+        type: 'POST',
+        url: '/users/password',
+        data: { "user": { "email": email } }
       });
       req.then(function(result){
         console.log('Response from Rails', result.response);

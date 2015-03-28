@@ -35,9 +35,9 @@ Router.map(function() {
   });
   this.resource('accounts', function() {
     this.route('new', { path: 'register' });
-    this.route('recover', { path: 'recover' });
-    this.route('destroy');
     this.route('confirm');
+    this.route('recover');
+    this.route('destroy');
   });
 });
 
